@@ -9,188 +9,6 @@ package Modelica_QuasiStatic_FluxTubes "Library for modelling of quasi static el
   extends Modelica.Icons.Package;
 
 
-  package UsersGuide "User's Guide"
-    extends Modelica.Icons.Information;
-
-    class FluxTubeConcept "Flux tube concept"
-      extends Modelica.Icons.Information;
-
-      annotation (Documentation(info="<html>
-<h4>Overview of the concept of quasi static magnetic flux tubes</h4>
-<p>
-Following below, the concept of magnetic flux tubes is outlined in short. For a detailed description of flux tube elements, please have a look at the listed literature. Magnetic flux tubes enable the modeling of magnetic fields with lumped equivalent circuit networks. </p>
-
-<p>Since quasi static conditions are assumed, each field quanitity can be represented by a complex phasor -- which is indicated by underlining the respective variable:
-</p>
-
-<ul>
-<li>Normal component of magnetic flux density, 
-    <img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/B_n.png\"> </li>
-<li>Normal component of magnetic field strength, 
-    <img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/H_n.png\"> </li>
-<li>Magnetic flux,
-    <img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/Phi.png\"> </li>
-<li>Magnetic potential difference,
-    <img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/V_m.png\"> </li>
-</ul>
-
-<p>The figure below and the following equations illustrate the relationships between</p>
-
-<ul>
-<li>the normal component of flux density and magnetic flux, and</li>
-<li>the normal component of field strength and magnetic potential difference.</li>
-</ul>
-
-
-<p>
-<IMG src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/magnetic_flux_tube_schematic_qs.png\" ALT=\"Magnetic flux tube\">
-</p>
-
-<p>A <b>flux tube</b> confines the magnetic flux. Flied lines, and flux tubes, respectively are always closed. So there is no flux entering or leaving a flux tube. The total flux of a configuration can be represented by parallel flux tubes, representing different flux paths. This is considered by connecting the elements of a lumped circuit model, such that the sum of all fluxes of a connection is equivalent to zero. </p>
-
-<p>
-For a section of a flux tube with length 
-<img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/l.png\"> 
-the magnetic potential difference is determined by the length integral over the magnetic field strength:</p>
-
-<dl>
-<dd>
-<img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/V_m-H_n.png\">
-</dd>
-</dl>
-
-<p>
-The magnetic flux entering, and leaving a flux tube, respectively, is determined by the surface integral of the normal component
-of the magnetic field strength: </p>
-<dl><dd>
-<img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/Phi-B_n.png\">
-</dd></dl>
-<p>The magnetic potential difference and the magnetic flux have the same angle, so the raluctance a real (non complex) quantity:</p>
-
-<dl><dd>
-<img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/R_m-V_m-Phi.png\">
-</dd></dl>
-
-<p>
-For a 
-<a href=\"modelica://Modelica_QuasiStatic_FluxTubes.Shapes.FixedShape.GenericFluxTube\">generic flux tube</a> reluctance with constant 
-area of cross section, 
-<img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/A.png\">, 
-and length,
-<img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/l.png\">,
-the magnetic reluctance is:</p>
-<dl><dd>
-<img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/R_m_cuboid.png\">
-</dd></dl>
-
-<h4>Assumptions</h4>
-
-<ul>
-<li><b>Force</b> interaction is not considered</li>
-<li>Reluctance models are <b>linear</b>; so non-linearities can only be taken into account by adapting the constant relative permability; 
-see example 
-<a href=\"modelica://Modelica_QuasiStatic_FluxTubes.Examples.NonLinearInductor\">NonLinearInductor</a></li>
-</ul>
-
-<h4>Notes</h4>
-
-<p>The parameter and variable names are chosen as close as possible to the transient 
-<a href=\"modelica://Modelica.Magnetic.FluxTubes\">FluxTubes</a> library, to avoid additional effort when converting transient into quasi static flux tubes models.</p>
-
-<h4>Reference Note</h4>
-
-<p>A similar approach on quasi static flux tube models is published in 
-[<a href=\"Modelica_QuasiStatic_FluxTubes.UsersGuide.Literature\">Raabe2012</a>].</p>
-</html>"));
-    end FluxTubeConcept;
-
-    class Literature "Literature"
-      extends Modelica.Icons.References;
-
-      annotation (Documentation(info="<html>
-<h4>References</h4>
-
-<table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
-    <tr>
-      <td valign=\"top\">[Raabe2012]</td>
-      <td valign=\"top\">N. Raabe,
-        &quot;<a href=\"http://www.ep.liu.se/ecp/076/016/ecp12076016.pdf\">
-        An approach for modelling quasi-stationary magnetic circuits</a>,&quot;
-        <i>Modelica Conference</i>,
-        pp. 167-172, 2012.</td>
-    </tr>
-</table>
-
-<h4>Additional References</h4>
-<p>
-Additional reference on magnetic flux tubes are listed in
-<a href=\"modelica://Modelica.Magnetic.FluxTubes.UsersGuide.Literature\">Modelica.Magnetic.FluxTubes</a>. 
-</p>
-</html>"));
-    end Literature;
-
-    class ReleaseNotes "Release Notes"
-      extends Modelica.Icons.ReleaseNotes;
-      annotation (Documentation(info="<html>
-
-<h5>Version 3.2.2, 2014-12-03</h5>
-<ul>
-<li>Version (to be) included in the MSL 3.2.2</li>
-<li>Added some more examples according to #1515</li>
-<li>Added magnitudes and angles of complex quantities for better result interpretation</li>
-</ul>
-
- 
-<h5>Version 1.0.0, 2013-12-18</h5>
-<ul>
-<li>Initial version before inclusion in MSL</li>
-</ul>
-</html>"));
-    end ReleaseNotes;
-
-    class Contact "Contact"
-      extends Modelica.Icons.Contact;
-
-      annotation (Documentation(info="<html>
-<h4>Contact</h4>
-
-<p>
-  Dr. Christian Kral<br>
-  <a href=\"http://christiankral.net/\">Electric Machines, Drives and Systems</a><br>
-  A-1060 Vienna, Austria<br>
-  email: <a href=\"mailto:dr.christian.kral@gmail.com\">dr.christian.kral@gmail.com</a>
-</p>
-
-<p>
-Anton Haumer<br>
-<a href=\"http://www.haumer.at\">Technical Consulting &amp; Electrical Engineering</a><br>
-3423 St. Andrae-Woerdern, Austria<br>
-email: <a HREF=\"mailto:a.haumer@haumer.at\">a.haumer@haumer.at</a><br>
-</p>
-
-<p>
-Copyright &copy; 1998-2014, Modelica Association, Christian Kral and Anton Haumer.
-</p>
-</html>"));
-    end Contact;
-    annotation (DocumentationClass=true, Documentation(info="<html>
-<p>The quasi static flux tubes libray is based on the transient library 
-<a href=\"modelica://Modelica.Magnetic.FluxTubes\">Magnetic.FluxTubes</a>. The main principles of confined flux and flux tubes apply, too. The quasi static flux tubes library contains components for modelling of electromagnetic devices with lumped magnetic networks based on quasi static theory. Models based on this library are suited for quasi static simulation of transformers at component and system level.</p>
-<p>The quasi static components of this library do not consider saturation since <b>linearity</b> is strictly assumed. In case that the permeability of a saturated circuit needs to be considered, a 
-<a href=\"modelica://Modelica_QuasiStatic_FluxTubes.Sensors.Transient.FundamentalWavePermabilitySensor\">transient permeability estimation sensor</a> is provided do determine the effective permeability from a transient simulation. 
-</p>
-
-<p>
-A general introduction into <b>quasi static</b> (quasi statinary) phasor can be found in 
-<a href=\"modelica://Modelica.Electrical.QuasiStationary.UsersGuide.Overview\">Modelica.Electrical.QuasiStationary</a>.
-</p>
-
-<p>
-This user's guide gives a short introduction to the underlying 
-<a href=\"modelica://Modelica_QuasiStatic_FluxTubes.UsersGuide.FluxTubeConcept\">concept</a> of quasi static magnetic flux tubes, summarizes basic relationships and equations.
-</p>
-</html>"));
-  end UsersGuide;
 
   package Examples
   "Illustration of component usage with simple models of various devices"
@@ -1094,6 +912,220 @@ This package contains examples to demonstrate the usage of the quasi static flux
 </p>
 </html>"));
   end Examples;
+
+  package UsersGuide "User's Guide"
+    extends Modelica.Icons.Information;
+
+    class FluxTubeConcept "Flux tube concept"
+      extends Modelica.Icons.Information;
+
+      annotation (Documentation(info="<html>
+<h4>Overview of the concept of quasi static magnetic flux tubes</h4>
+<p>
+Following below, the concept of magnetic flux tubes is outlined in short. For a detailed description of flux tube elements, please have a look at the listed literature. Magnetic flux tubes enable the modeling of magnetic fields with lumped equivalent circuit networks. </p>
+
+<p>Since quasi static conditions are assumed, each field quanitity can be represented by a complex phasor -- which is indicated by underlining the respective variable:
+</p>
+
+<ul>
+<li>Normal component of magnetic flux density, 
+    <img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/B_n.png\"> </li>
+<li>Normal component of magnetic field strength, 
+    <img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/H_n.png\"> </li>
+<li>Magnetic flux,
+    <img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/Phi.png\"> </li>
+<li>Magnetic potential difference,
+    <img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/V_m.png\"> </li>
+</ul>
+
+<p>The figure below and the following equations illustrate the relationships between</p>
+
+<ul>
+<li>the normal component of flux density and magnetic flux, and</li>
+<li>the normal component of field strength and magnetic potential difference.</li>
+</ul>
+
+
+<p>
+<IMG src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/magnetic_flux_tube_schematic_qs.png\" ALT=\"Magnetic flux tube\">
+</p>
+
+<p>A <b>flux tube</b> confines the magnetic flux. Flied lines, and flux tubes, respectively are always closed. So there is no flux entering or leaving a flux tube. The total flux of a configuration can be represented by parallel flux tubes, representing different flux paths. This is considered by connecting the elements of a lumped circuit model, such that the sum of all fluxes of a connection is equivalent to zero. </p>
+
+<p>
+For a section of a flux tube with length 
+<img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/l.png\"> 
+the magnetic potential difference is determined by the length integral over the magnetic field strength:</p>
+
+<dl>
+<dd>
+<img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/V_m-H_n.png\">
+</dd>
+</dl>
+
+<p>
+The magnetic flux entering, and leaving a flux tube, respectively, is determined by the surface integral of the normal component
+of the magnetic field strength: </p>
+<dl><dd>
+<img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/Phi-B_n.png\">
+</dd></dl>
+<p>The magnetic potential difference and the magnetic flux have the same angle, so the raluctance a real (non complex) quantity:</p>
+
+<dl><dd>
+<img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/R_m-V_m-Phi.png\">
+</dd></dl>
+
+<p>
+For a 
+<a href=\"modelica://Modelica_QuasiStatic_FluxTubes.Shapes.FixedShape.GenericFluxTube\">generic flux tube</a> reluctance with constant 
+area of cross section, 
+<img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/A.png\">, 
+and length,
+<img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/l.png\">,
+the magnetic reluctance is:</p>
+<dl><dd>
+<img src=\"modelica://Modelica_QuasiStatic_FluxTubes/Resources/Images/Magnetic/QuasiStatic/FluxTubes/R_m_cuboid.png\">
+</dd></dl>
+
+<h4>Assumptions</h4>
+
+<ul>
+<li><b>Force</b> interaction is not considered</li>
+<li>Reluctance models are <b>linear</b>; so non-linearities can only be taken into account by adapting the constant relative permability; 
+see example 
+<a href=\"modelica://Modelica_QuasiStatic_FluxTubes.Examples.NonLinearInductor\">NonLinearInductor</a></li>
+</ul>
+
+<h4>Notes</h4>
+
+<p>The parameter and variable names are chosen as close as possible to the transient 
+<a href=\"modelica://Modelica.Magnetic.FluxTubes\">FluxTubes</a> library, to avoid additional effort when converting transient into quasi static flux tubes models.</p>
+
+<h4>Reference Note</h4>
+
+<p>A similar approach on quasi static flux tube models is published in 
+[<a href=\"Modelica_QuasiStatic_FluxTubes.UsersGuide.Literature\">Raabe2012</a>].</p>
+</html>"));
+    end FluxTubeConcept;
+
+    class License "License"
+      extends Modelica.Icons.Information;
+
+      annotation (Documentation(info="<html>
+<h4>License</h4>
+
+<p>
+This library is published under the 
+<a href=\"https://opensource.org/licenses/BSD-3-Clause\">BSD-3-Clause</a>.
+</p>
+<p>
+Copyright 2013-2017 Christian Kral and Anton Haumer
+</p>
+<p>
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+</p>
+<p>
+Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+</p>
+<p>
+Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+</p>
+<p>
+Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+</p>
+<p>
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</p>
+</html>"));
+    end License;
+
+    class Literature "Literature"
+      extends Modelica.Icons.References;
+
+      annotation (Documentation(info="<html>
+<h4>References</h4>
+
+<table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
+    <tr>
+      <td valign=\"top\">[Raabe2012]</td>
+      <td valign=\"top\">N. Raabe,
+        &quot;<a href=\"http://www.ep.liu.se/ecp/076/016/ecp12076016.pdf\">
+        An approach for modelling quasi-stationary magnetic circuits</a>,&quot;
+        <i>Modelica Conference</i>,
+        pp. 167-172, 2012.</td>
+    </tr>
+</table>
+
+<h4>Additional References</h4>
+<p>
+Additional reference on magnetic flux tubes are listed in
+<a href=\"modelica://Modelica.Magnetic.FluxTubes.UsersGuide.Literature\">Modelica.Magnetic.FluxTubes</a>. 
+</p>
+</html>"));
+    end Literature;
+
+    class ReleaseNotes "Release Notes"
+      extends Modelica.Icons.ReleaseNotes;
+      annotation (Documentation(info="<html>
+
+<h5>Version 3.2.2, 2014-12-03</h5>
+<ul>
+<li>Version (to be) included in the MSL 3.2.2</li>
+<li>Added some more examples according to #1515</li>
+<li>Added magnitudes and angles of complex quantities for better result interpretation</li>
+</ul>
+
+ 
+<h5>Version 1.0.0, 2013-12-18</h5>
+<ul>
+<li>Initial version before inclusion in MSL</li>
+</ul>
+</html>"));
+    end ReleaseNotes;
+
+    class Contact "Contact"
+      extends Modelica.Icons.Contact;
+
+      annotation (Documentation(info="<html>
+<h4>Contact</h4>
+
+<p>
+  Dr. Christian Kral<br>
+  <a href=\"http://christiankral.net/\">Electric Machines, Drives and Systems</a><br>
+  A-1060 Vienna, Austria<br>
+  email: <a href=\"mailto:dr.christian.kral@gmail.com\">dr.christian.kral@gmail.com</a>
+</p>
+
+<p>
+Anton Haumer<br>
+<a href=\"http://www.haumer.at\">Technical Consulting &amp; Electrical Engineering</a><br>
+3423 St. Andrae-Woerdern, Austria<br>
+email: <a HREF=\"mailto:a.haumer@haumer.at\">a.haumer@haumer.at</a><br>
+</p>
+
+<p>
+Copyright &copy; 1998-2014, Modelica Association, Christian Kral and Anton Haumer.
+</p>
+</html>"));
+    end Contact;
+    annotation (DocumentationClass=true, Documentation(info="<html>
+<p>The quasi static flux tubes libray is based on the transient library 
+<a href=\"modelica://Modelica.Magnetic.FluxTubes\">Magnetic.FluxTubes</a>. The main principles of confined flux and flux tubes apply, too. The quasi static flux tubes library contains components for modelling of electromagnetic devices with lumped magnetic networks based on quasi static theory. Models based on this library are suited for quasi static simulation of transformers at component and system level.</p>
+<p>The quasi static components of this library do not consider saturation since <b>linearity</b> is strictly assumed. In case that the permeability of a saturated circuit needs to be considered, a 
+<a href=\"modelica://Modelica_QuasiStatic_FluxTubes.Sensors.Transient.FundamentalWavePermabilitySensor\">transient permeability estimation sensor</a> is provided do determine the effective permeability from a transient simulation. 
+</p>
+
+<p>
+A general introduction into <b>quasi static</b> (quasi statinary) phasor can be found in 
+<a href=\"modelica://Modelica.Electrical.QuasiStationary.UsersGuide.Overview\">Modelica.Electrical.QuasiStationary</a>.
+</p>
+
+<p>
+This user's guide gives a short introduction to the underlying 
+<a href=\"modelica://Modelica_QuasiStatic_FluxTubes.UsersGuide.FluxTubeConcept\">concept</a> of quasi static magnetic flux tubes, summarizes basic relationships and equations.
+</p>
+</html>"));
+  end UsersGuide;
 
   package Basic "Basic elements of magnetic network models"
     extends Modelica.Icons.Package;
