@@ -2,7 +2,7 @@
 
 Quasi static flux tube models 
 
-This library is a proposal to be included in the [Modelica Standard Library](https://github.com/modelica/Modelica/issues/1515)  
+This library is a proposal to be included in the [Modelica Standard Library](https://github.com/modelica/Modelica), see Modelica ticket [#1515](https://github.com/modelica/Modelica/issues/1515).  
 
 # License
 
